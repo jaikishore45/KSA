@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="header.css">
+  </head>
+  <body>
+
+    <div id="slideshowContainer">
+        <a href="#" target="_blank">
+           <img class='imageSlides' src="https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg" style="width:100%;height:  auto;margin-bottom: 40px !important;">
+        </a>
+        <a href="#" target="_blank">
+           <img class='imageSlides' src="http://blog.entheosweb.com/wp-content/uploads/2012/01/headergreen.jpg" style="width:100%;height:  auto;margin-bottom: 40px !important;">
+        </a>
+        <a href="#" target="_blank">
+           <img class='imageSlides' src="https://hkr.com.au/wp-content/uploads/2015/09/hi-tech-concepts-on-blue-background-header.jpg" style="width:100%; height:  auto;margin-bottom: 40px !important;">
+        </a>
+      
+        <div class="slideshowCircles" style="text-align:center">
+          <span class="circle dot"></span>
+          <span class="circle dot"></span>
+          <span class="circle dot"></span>
+        </div>
+        <div class="header fixed-top ">
+            <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#">About us</a>
+          <ul class="submenu">
+            <li><a href="#">KSA</a></li>
+            <li><a href="#">KVITT</a></li>
+            <li><a href="#">COMMITEES</a></li>
+            <li><a href="#">INFRASTRUCTURE & FALICITIES</a></li>
+            <li><a href="#">FACULTY</a></li>
+          </ul>
+         
+        </li>
+        <li><a href="#">admission</a>
+          <ul class="submenu">
+            <li><a href="#">ELIGIBILITY</a></li>
+            <li><a href="#">NATA 2020</a></li>
+            
+          </ul>
+        </li>
+        
+        <li><a href="#">academics</a>
+          <ul class="submenu">
+            <li><a href="#">CURRICULUM & SYLLABUS</a></li>
+            <li><a href="#">ACADEMIC SCHEDULE</a></li>
+            
+          </ul></li>
+        <li><a href="#">activity</a>
+          <ul class="submenu">
+            <li><a href="#">ASSOCIATION</a></li>
+            <li><a href="#">NEW LETTER</a></li>
+            <li><a href="#">VISIT & TIPS</a></li>
+            <li><a href="#">STUDENT WORKS</a></li>
+          </ul></li>
+        <li><a href="#">grievance</a>
+          <ul class="submenu">
+            <li><a href="#">STUDENT</a></li>
+            <li><a href="#">FACULTY</a></li>
+            <li><a href="#">ALUMNI</a></li>
+            <li><a href="#">OTHER STAFF</a></li>
+            <li><a href="#">PARENT</a></li>
+          </ul></li>
+        <li><a href="#">online payment</a></li>
+        <li><a href="#">contact us</a></li>
+      </ul>     
+        </div>
+      </div>
+    <!--image slider end-->
+
+    <script type="text/javascript">
+    var imageSlides = document.getElementsByClassName('imageSlides');
+var circles = document.getElementsByClassName('circle');
+var counter = 0
+
+function hideImages() {
+    for (var i = 0; i < imageSlides.length; i++) {
+        imageSlides[i].classList.remove('visible');
+    }
+}  
+
+function removeDots() {
+    for (var i = 0; i < imageSlides.length; i++) {
+        circles[i].classList.remove('dot');
+    }
+}
+
+function imageLoop() {
+    var currentImage = imageSlides[counter];
+    var currentDot = circles[counter];
+    currentImage.classList.add('visible');
+    removeDots();
+    currentDot.classList.add('dot');
+    counter++;
+}
+
+function slideshow() {
+    if (counter < imageSlides.length) {
+        imageLoop();
+    } else {
+        counter = 0;
+        hideImages();
+        imageLoop();
+    }
+}
+
+setTimeout(slideshow);
+var imageSlideshowInterval = setInterval(slideshow, 4000);
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,125 @@
+*{
+    margin:0%;
+    padding:0%;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+.slideshowContainer {
+    position:absolute;
+     overflow: hidden;
+     width: 100%;
+     height: 100px;
+     
+ }
+ 
+ .imageSlides {
+   top:70px;
+     position: absolute;
+    
+     transform: translate();
+     min-height: 60vh;
+     max-height: 60vh;
+     object-fit:cover;
+     opacity: 0;
+     transition: opacity 1s ease-in-out;
+     z-index: 0;
+ }
+ 
+ .visible {
+     opacity: 1;
+ }
+ 
+ .hidden {
+     opacity: 0;
+ }
+ 
+
+ .header{
+      z-index: 999;
+      position: absolute;
+
+      padding: 5px;
+      width: 100%;
+      box-shadow: 1px 2px 20px rgb(22, 21, 21);
+      background-size: cover;
+      background-repeat: no-repeat;
+      top:80px;
+  }
+  .header ul li a{
+      
+      padding: 0px 29px;
+      list-style: none;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      position: relative;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+     
+      
+      
+  }
+  .header ul li::after{
+      content: '';
+      width:0%;
+      height:3px;
+      background:aquamarine;
+      border-radius: 100px;
+      display:block;
+      margin: auto;
+      transition: 0.8s;
+      
+  }
+  .header ul li:hover::after{
+      padding-left: 20px;
+      width:80%;
+      border:5px aquamarine;
+     
+  }
+  .submenu{
+      overflow: hidden;
+      top:180px;
+      border-radius: 30px;
+  }
+  ul li {
+      display: inline-block;
+      border-radius: 30px;
+      
+  }
+  ul li:hover .submenu  {
+      
+      height: 60px;
+      border-radius: 30px;
+      width: 100%;
+      overflow: hidden;
+      background-color: rgb(18, 106, 156);
+      
+  }
+  ul li:hover a {
+      color: #e1e5eb;
+  }
+  ul li:hover a::before {    
+      transform: scale(1, 9);
+  }
+  ul li .submenu {
+      
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-color: teal;
+      height: 0px;
+      line-height: 36px;
+      box-sizing: border-box;
+      transition: height 0.3s ease-in-out;
+      transition-delay: 0.5s;
+      border-radius: 30px;
+      }
+   ul li  .submenu a{
+      color: #fff;
+      font-size: 16px;
+      
+  }
+ 
+ 
